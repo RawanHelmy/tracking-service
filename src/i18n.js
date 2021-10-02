@@ -41,6 +41,8 @@ i18n.use(LanguageDetector).init({
         NOT_YET_SHIPPED: "Shipment not Shipped Yet",
         OUT_FOR_DELIVERY: "Shipment out for Delivery",
         RECEIVED_DELIVERY_LOCATION: "Received Delivery Location",
+        WAITING_FOR_CUSTOMER_ACTION: "Waiting for customer action",
+        dir: "ltr",
       },
     },
     ar: {
@@ -79,6 +81,8 @@ i18n.use(LanguageDetector).init({
         NOT_YET_SHIPPED: "لم يتم شحن الشحنة بعد",
         OUT_FOR_DELIVERY: "الشحنه خرجت للتسليم",
         RECEIVED_DELIVERY_LOCATION: "استلام موقع التسليم",
+        WAITING_FOR_CUSTOMER_ACTION: "في انتظار إجراء العميل",
+        dir: "rtl",
       },
     },
   },

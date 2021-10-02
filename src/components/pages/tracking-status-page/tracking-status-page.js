@@ -7,32 +7,6 @@ import StatusHeader from "./status-header/status-header";
 import StatusState from "./status-state/status-state";
 
 export default class TrackingStatus extends Component {
-  tableData = [
-    {
-      Branch: "Branch 1",
-      Date: "05/04/2020",
-      Time: "12:20 pm",
-      Details: "Details",
-    },
-    {
-      Branch: "Branch 1",
-      Date: "05/04/2020",
-      Time: "12:20 pm",
-      Details: "Details",
-    },
-    {
-      Branch: "Branch 1",
-      Date: "05/04/2020",
-      Time: "12:20 pm",
-      Details: "Details",
-    },
-    {
-      Branch: "Branch 1",
-      Date: "05/04/2020",
-      Time: "12:20 pm",
-      Details: "Details",
-    },
-  ];
   constructor(props) {
     super(props);
     this.state = {
@@ -42,7 +16,7 @@ export default class TrackingStatus extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://tracking.bosta.co/shipments/track/6636234")
+    fetch("https://tracking.bosta.co/shipments/track/9442984")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -50,7 +24,6 @@ export default class TrackingStatus extends Component {
             isLoaded: true,
             shipment: result,
           });
-          console.log(result);
         },
         (error) => {
           this.setState({
@@ -60,6 +33,15 @@ export default class TrackingStatus extends Component {
         }
       );
   }
+  getDeliveryDate = () => {
+    let date = this.state.shipment.CurrentStatus.timestamp;
+    this.state.shipment.TransitEvents.forEach((element) => {
+      if (element.state === "DELIVERED") {
+        return element.timestamp;
+      }
+    });
+    return date;
+  };
   render() {
     if (this.state.isLoaded)
       return (
@@ -79,7 +61,16 @@ export default class TrackingStatus extends Component {
         </div>
       );
     else {
-      return <div></div>;
+      return (
+        <div className="spinner">
+          <div className="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      );
     }
   }
 }

@@ -5,6 +5,17 @@ import { Table } from "react-bootstrap";
 import { withTranslation } from "react-i18next";
 
 class StatusDetails extends Component {
+  componentDidMount() {
+    if (window.innerWidth > 600) return false;
+    const tableEl = document.querySelector("table");
+    const thEls = tableEl.querySelectorAll("thead th");
+    const tdLabels = Array.from(thEls).map((el) => el.innerText);
+    tableEl.querySelectorAll("tbody tr").forEach((tr) => {
+      Array.from(tr.children).forEach((td, ndx) =>
+        td.setAttribute("label", tdLabels[ndx])
+      );
+    });
+  }
   render() {
     const { t } = this.props;
     return (

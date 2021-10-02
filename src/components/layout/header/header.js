@@ -9,12 +9,12 @@ class Header extends Component {
   state = {
     lang: "en",
   };
-  handleChange = (event) => {
+  handleChange = () => {
     let newlang = "en";
-    if (this.state.lang == "en") {
+    if (this.state.lang === "en") {
       newlang = "ar";
     }
-    this.setState((prevState) => ({ lang: newlang }));
+    this.setState(() => ({ lang: newlang }));
     this.props.i18n.changeLanguage(newlang);
   };
   render() {
