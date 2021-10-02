@@ -50,6 +50,7 @@ class Header extends Component {
         </Navbar>
         <div className="Main">
           <Route path="/TrackingPage" component={TrackingPage} />
+          <Route path="/" exact component={TrackingPage} />
           <Route
             path="/TrackingStatus/:trackingNumber"
             component={TrackingStatus}
