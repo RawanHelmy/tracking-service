@@ -20,7 +20,7 @@ class StatusState extends Component {
               <i className="fa fa-truck-moving"></i>
             </div>
             <div>
-              <i className="fas fa-calendar-check"></i>
+              <i className="fa-solid fa-box-check"></i>
             </div>
             {/* <div>
               <i className="fa fa-check-circle"></i>

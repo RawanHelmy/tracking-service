@@ -11,13 +11,7 @@ class Footer extends Component {
         <div className="footer-content">
           <div className="firstcolumn">
             <div className="firstrow">
-              <img
-                className="alignnone size-full wp-image-139"
-                src={t("logo footer")}
-                alt=""
-                width="110"
-                height="36"
-              />
+              <img src={t("logo footer")} alt="" width="110" height="36" />
             </div>
             <div className="secondrow">
               <p>help@bosta.co</p>

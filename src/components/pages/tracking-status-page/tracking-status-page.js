@@ -18,7 +18,7 @@ function TrackingStatus() {
       <StatusState status="inProgress" width="67" />
       <div className="page-bottom">
         <StatusDetails />
-        <StatusAddress />
+        <StatusAddress address="addressaddressaddressaaddressaddressaddressaddresssddressaddressaddressaddressaddressaddress" />
       </div>
     </div>
   );
