@@ -2,43 +2,38 @@ import "./status-details.css";
 
 import { Component } from "react";
 import { Table } from "react-bootstrap";
+import { withTranslation } from "react-i18next";
 
-export default class StatusDetails extends Component {
+class StatusDetails extends Component {
   render() {
+    const { t } = this.props;
     return (
       <div className="DetailsContainer">
-        <label>Delivery Details</label>
+        <label>{t("Delivery Details")}</label>
         <Table bordered hover>
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-              <th>Username</th>
+              <th>{t("Branch")}</th>
+              <th>{t("Date")}</th>
+              <th>{t("Time")}</th>
+              <th>{t("Details")}</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>Larry the Bird</td>
-              <td>Larry the Bird</td>
-              <td>@twitter</td>
-              <td>@twitter</td>
-            </tr>
+            {this.props.details.map((object, key) => {
+              return (
+                <tr key={key}>
+                  <td>{object.Branch ? object.Branch : t("Main Branch")}</td>
+                  <td>{new Date(object.timestamp).toLocaleDateString()}</td>
+                  <td>{new Date(object.timestamp).toLocaleTimeString()}</td>
+                  <td>{t(object.state)}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </div>
     );
   }
 }
+export default withTranslation()(StatusDetails);

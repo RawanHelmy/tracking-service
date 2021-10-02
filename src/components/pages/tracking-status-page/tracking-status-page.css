@@ -1,3 +1,8 @@
 .page-bottom {
   display: flex;
 }
+@media only screen and (max-width: 497px) {
+  .page-bottom {
+    flex-direction: column;
+  }
+}

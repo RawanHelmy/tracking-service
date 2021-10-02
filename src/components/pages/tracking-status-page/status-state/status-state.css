@@ -1,6 +1,7 @@
 .StateContainer {
   background-color: white;
   padding: 20px 30px;
+  padding-top: 50px;
   border-radius: 15px;
   border: 1px #e6e5e5 solid;
   border-top-left-radius: 0px;
@@ -27,13 +28,10 @@
   white-space: nowrap;
   transition: width 0.6s ease;
 }
-.status .inProgess {
-  background-color: #f9b905;
-}
 .statuses {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .statuses p {
   font-size: 17px;
@@ -43,7 +41,6 @@
   position: absolute;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
   text-align: center;
   white-space: nowrap;
   width: 88%;
@@ -53,4 +50,30 @@
 .icons i {
   font-size: 20px;
   background-color: white;
+}
+@media only screen and (max-width: 497px) {
+  .StateContainer {
+    display: none;
+  }
+}
+.truck {
+  background-color: #f9b905;
+  padding: 10px;
+  padding: 10px;
+  margin-top: -15px;
+  border-radius: 50%;
+}
+.checked {
+  background-color: white;
+  margin-top: -10px;
+}
+.truck i,
+.checked i {
+  color: white;
+  font-size: 35px;
+
+  background-color: transparent;
+}
+.checked i {
+  color: #cfcfcf;
 }

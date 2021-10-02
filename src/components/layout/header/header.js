@@ -11,6 +11,9 @@ class Header extends Component {
   };
   handleChange = (event) => {
     let newlang = "en";
+    if (this.state.lang == "en") {
+      newlang = "ar";
+    }
     this.setState((prevState) => ({ lang: newlang }));
     this.props.i18n.changeLanguage(newlang);
   };

@@ -1,16 +1,3 @@
-.header {
-  width: 100%;
-  top: 0px;
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: sticky;
-  z-index: 2;
-}
-.header > div {
-  padding: 20px 100px;
-}
 .lang span {
   font-size: 22px;
   font-weight: 800;
@@ -34,4 +21,12 @@
 }
 .navbar-light .navbar-nav .nav-link {
   color: #101010;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  z-index: 4;
 }

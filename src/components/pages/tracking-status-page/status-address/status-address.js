@@ -1,15 +1,17 @@
 import "./status-address.css";
 
 import { Component } from "react";
+import { withTranslation } from "react-i18next";
 
-export default class StatusAddress extends Component {
+class StatusAddress extends Component {
   render() {
+    const { t } = this.props;
     return (
       <div className="AddressContainer">
-        <label>Delivery Address</label>
+        <label>{t("Delivery Address")}</label>
         <div>
           <div className="Address">
-            <p>{this.props.address}</p>
+            <p>{this.props.address ? this.props.address : t("NOAddress")}</p>
           </div>
           <div className="Problem">
             <div className="img">
@@ -21,8 +23,8 @@ export default class StatusAddress extends Component {
               />
             </div>
             <div className="question">
-              <label>Is there any problem in your shipment?</label>
-              <button>Report a problem</button>
+              <label>{t("Is there any problem in your shipment?")}</label>
+              <button>{t("Report a problem")}</button>
             </div>
           </div>
         </div>
@@ -30,3 +32,4 @@ export default class StatusAddress extends Component {
     );
   }
 }
+export default withTranslation()(StatusAddress);
