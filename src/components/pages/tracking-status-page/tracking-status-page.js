@@ -16,10 +16,12 @@ export default class TrackingStatus extends Component {
     };
   }
   componentDidMount() {
-    fetch("https://tracking.bosta.co/shipments/track/9442984")
+    let num = this.props.match.params.trackingNumber;
+    fetch(`https://tracking.bosta.co/shipments/track/${num}`)
       .then((res) => res.json())
       .then(
         (result) => {
+          console.log(result);
           this.setState({
             isLoaded: true,
             shipment: result,
@@ -43,7 +45,7 @@ export default class TrackingStatus extends Component {
     return date;
   };
   render() {
-    if (this.state.isLoaded)
+    if (this.state.isLoaded && !this.state.shipment.error)
       return (
         <div>
           <StatusHeader
@@ -60,7 +62,7 @@ export default class TrackingStatus extends Component {
           </div>
         </div>
       );
-    else {
+    else if (!this.state.isLoaded) {
       return (
         <div className="spinner">
           <div className="lds-ring">
@@ -69,6 +71,12 @@ export default class TrackingStatus extends Component {
             <div></div>
             <div></div>
           </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="Error">
+          <h1>{this.state.shipment.error}</h1>
         </div>
       );
     }

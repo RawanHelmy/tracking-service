@@ -44,3 +44,8 @@ form button {
   font-size: 14px;
   margin-left: 10px;
 }
+@media only screen and (max-width: 497px) {
+  form input {
+    width: 186px;
+  }
+}

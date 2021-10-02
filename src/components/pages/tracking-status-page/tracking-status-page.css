@@ -45,3 +45,6 @@
   justify-content: center;
   display: flex;
 }
+.Error {
+  text-align: center;
+}

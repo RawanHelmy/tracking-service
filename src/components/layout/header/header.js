@@ -1,8 +1,11 @@
 import "./header.css";
 
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link, Route, BrowserRouter as Router } from "react-router-dom";
 
 import { Component } from "react";
+import TrackingPage from "../../pages/tracking-page/tracking-page";
+import TrackingStatus from "../../pages/tracking-status-page/tracking-status-page";
 import { withTranslation } from "react-i18next";
 
 class Header extends Component {
@@ -20,31 +23,39 @@ class Header extends Component {
   render() {
     const { t } = this.props;
     return (
-      <Navbar expand="lg">
-        <Container>
-          <Navbar.Brand href="#home">
-            {" "}
-            <img src={t("logo header")} alt="bosta.co" />
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse
-            id="basic-navbar-nav"
-            className="justify-content-end"
-          >
-            <Nav className="nav">
-              <Nav.Link className="link">
-                <span>{t("Tracking Shipment")}</span>
-              </Nav.Link>
-
-              <Nav.Link className="lang">
-                <button onClick={this.handleChange}>
-                  <span>{t("lang")}</span>
-                </button>
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+      <Router>
+        <Navbar expand="lg">
+          <Container>
+            <Navbar.Brand href="#home">
+              {" "}
+              <img src={t("logo header")} alt="bosta.co" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse
+              id="basic-navbar-nav"
+              className="justify-content-end"
+            >
+              <Nav className="nav">
+                <Link to="/TrackingPage" className="link">
+                  <span>{t("Tracking Shipment")}</span>
+                </Link>
+                <Nav.Link className="lang" href="#x">
+                  <button onClick={this.handleChange}>
+                    <span>{t("lang")}</span>
+                  </button>
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <div className="Main">
+          <Route path="/TrackingPage" component={TrackingPage} />
+          <Route
+            path="/TrackingStatus/:trackingNumber"
+            component={TrackingStatus}
+          />
+        </div>
+      </Router>
     );
   }
 }
