@@ -1,0 +1,56 @@
+.StateContainer {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px #e6e5e5 solid;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-top: none;
+}
+.StateContainer .progess {
+  height: 8px;
+}
+.status {
+  display: flex;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+.status-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  transition: width 0.6s ease;
+}
+.status .inProgess {
+  background-color: #f9b905;
+}
+.statuses {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.statuses p {
+  font-size: 17px;
+}
+.icons {
+  margin: 0px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  text-align: center;
+  white-space: nowrap;
+  width: 88%;
+  transition: width 0.6s ease;
+  margin-top: -6px;
+}
+.icons i {
+  font-size: 20px;
+  background-color: white;
+}

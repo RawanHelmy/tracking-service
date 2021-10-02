@@ -29,7 +29,7 @@ i18n.use(LanguageDetector).init({
         "Please Enter your shipment number and Track your Shipment.":
           "الرجاء إدخال رقم الشحنة وتتبع الشحنة الخاصة بك",
         "Track another shipment": "تتبع شحنة أخرى",
-        "Tracking No.": " تتبع أي. ",
+        "Tracking No.": " رقم الشحنة. ",
         "logo header":
           "https://bosta.co/wp-content/uploads/2019/08/Component.svg",
         "logo footer":

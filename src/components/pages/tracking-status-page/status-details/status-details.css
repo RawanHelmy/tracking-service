@@ -1,0 +1,20 @@
+.DetailsContainer {
+  padding-top: 30px;
+  flex-grow: 0.8;
+}
+.DetailsContainer > label {
+  font-size: 18px;
+  color: #565c70;
+  margin-bottom: 20px;
+}
+.DetailsContainer thead {
+  background-color: #fafafa;
+  color: #9ba5ba;
+  font-size: 15px;
+  border-radius: 15px;
+}
+.table {
+  border-radius: 15px;
+  width: 100%;
+  border-color: #ebeaea;
+}

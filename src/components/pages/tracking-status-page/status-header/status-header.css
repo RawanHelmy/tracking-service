@@ -1,0 +1,29 @@
+.StatusHeaderContainer {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 15px;
+  border: 1px #e6e5e5 solid;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.Columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+}
+.Columns .Column label {
+  color: #8f8f8f;
+}
+.delivered {
+  color: #36b700;
+}
+.inProgress {
+  color: #f9b905;
+}
+.canceled {
+  color: #ff0000;
+}
+.Column p {
+  font-size: 20px;
+  font-weight: 600;
+}

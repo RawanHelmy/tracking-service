@@ -1,0 +1,23 @@
+.AddressContainer {
+  padding-top: 30px;
+  padding-inline-start: 20px;
+}
+.AddressContainer > label {
+  font-size: 18px;
+  color: #565c70;
+  margin-bottom: 20px;
+}
+.Address {
+  background-color: #fafafa;
+  color: #8c92a1;
+  padding: 20px;
+  border: 1px solid #ebeaea;
+  border-radius: 5px;
+}
+.Problem {
+  border: 1px solid #ebeaea;
+  border-radius: 5px;
+  color: #41475f;
+  font-size: 17px;
+  font-weight: 600;
+}
